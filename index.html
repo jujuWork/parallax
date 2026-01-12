@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sponago</title>
 
     <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="assets/css/style.css"> 
+    <link rel="stylesheet" href="assets/css/style.css" />
     <!-- HEADER STYLE -->
-     <link rel="stylesheet" href="assets/css/pages-css/header.css">
-</head>
-<body>
-
-    
-<div class="grid_container">
-    <header class="grid_item" id="header-container"></header>
-    <div class="grid_item" id="content-container"></div>
-    <footer class="grid_item" id="footer-container"></footer>
-</div>
-    
+    <link rel="stylesheet" href="assets/css/pages-css/header.css" />
+  </head>
+  <body>
+    <div class="grid_container">
+      <header class="grid_item" id="header-container"></header>
+      <div class="grid_item" id="content-container"></div>
+      <footer class="grid_item" id="footer-container"></footer>
+    </div>
 
     <script>
-        // Loading Multiple Components
-        function loadComponent(filePath, targetId) {
-            fetch(filePath)
-                .then(response => response.text())
-                .then(htmlContent => {
-                    document.getElementById(targetId).innerHTML = htmlContent;
-                })
-                .catch(error => {
-                    console.error("Cound not load Components"  + filePath );
-                })
-        }
+      // Loading Multiple Components
+      function loadComponent(filePath, targetId) {
+        fetch(filePath)
+          .then((response) => response.text())
+          .then((htmlContent) => {
+            document.getElementById(targetId).innerHTML = htmlContent;
+          })
+          .catch((error) => {
+            console.error('Cound not load Components' + filePath);
+          });
+      }
 
-        // Execution
-        loadComponent('assets/pages/header.html', 'header-container');
-        loadComponent('assets/pages/content.html', 'content-container');
-        loadComponent('assets/pages/footer.html', 'footer-container');
+      // Execution
+      loadComponent('assets/pages/header.html', 'header-container');
+      loadComponent('assets/pages/content.html', 'content-container');
+      loadComponent('assets/pages/footer.html', 'footer-container');
     </script>
-</body>
+  </body>
 </html>
 
-
-
-
-    <!-- <div class="section1">
+<!-- <div class="section1">
         <div class="text">PARALLAX</div>
     </div>
     <div class="section2">
