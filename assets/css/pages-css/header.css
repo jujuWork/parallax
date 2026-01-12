@@ -1,6 +1,6 @@
 header {
-  border: 1px solid red;
-  height: 100vh;
+  height: 1500px;
+  position: relative;
 }
 
 .nav-container {
@@ -8,27 +8,46 @@ header {
   top: 0;
   width: 100%;
   padding: 0 2em;
+  margin-top: 2em;
 }
 
 .nav-items {
-  position: relative;
   display: flex;
+  gap: 15px;
   font-size: clamp(0.6rem, 2vw, 1.2rem);
+}
 
-  .nav-links {
-    border: 1px solid blue;
-    list-style: none;
-    width: 10em;
-    height: 2em;
-    align-content: center;
-    text-align: center;
-  }
+.nav-links {
+  list-style: none;
+  width: 10em;
+  height: 2em;
+  align-content: center;
+  text-align: center;
+  border: 1px solid #353434;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
 
-  button {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    width: clamp(50px, 100%, 100px);
-    height: clamp(20px, 100%, 50px);
-  }
+button {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: clamp(50px, 100%, 100px);
+  height: clamp(20px, 100%, 50px);
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown a::before {
+  content: '';
+  background: url('/assets/backgrounds/header/icons/up-arrow.png') center center /
+    cover;
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  fill: #fff;
 }
