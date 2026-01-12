@@ -5,14 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sponago</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <!-- HEADER STYLE -->
+     <link rel="stylesheet" href="assets/css/pages-css/header.css">
 </head>
 <body>
-    <div class="section1">
+
+    
+<div class="grid_container">
+    <header class="grid_item" id="header-container"></header>
+    <div class="grid_item" id="content-container"></div>
+    <footer class="grid_item" id="footer-container"></footer>
+</div>
+    
+
+    <script>
+        // Loading Multiple Components
+        function loadComponent(filePath, targetId) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(htmlContent => {
+                    document.getElementById(targetId).innerHTML = htmlContent;
+                })
+                .catch(error => {
+                    console.error("Cound not load Components"  + filePath );
+                })
+        }
+
+        // Execution
+        loadComponent('assets/pages/header.html', 'header-container');
+        loadComponent('assets/pages/content.html', 'content-container');
+        loadComponent('assets/pages/footer.html', 'footer-container');
+    </script>
+</body>
+</html>
+
+
+
+
+    <!-- <div class="section1">
         <div class="text">PARALLAX</div>
     </div>
     <div class="section2">
         <div class="text">NORMAL</div>
-    </div>
-</body>
-</html>
+    </div> -->
