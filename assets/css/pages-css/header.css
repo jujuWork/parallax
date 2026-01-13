@@ -36,13 +36,15 @@ header {
 }
 
 .logo {
-  border: 1px solid red;
   position: relative;
-  width: 15em;
+  width: 20em;
   height: 5em;
   display: flex;
   justify-content: flex-start;
   align-content: center;
+  border: none;
+  outline: none;
+  margin-right: 2rem;
 }
 
 .logo a {
@@ -52,16 +54,35 @@ header {
 }
 
 .logo-kana {
-  border: 1px solid red;
+  width: 50%;
+  font-size: clamp(1rem, 4vw, 2.3rem);
+  font-weight: 900;
+  text-align: center;
+  margin: 20px 0 0 0;
+  font-family: 'Main_Font';
   position: absolute;
+  bottom: -2.5rem;
+  left: 2rem;
+  letter-spacing: 1rem;
+}
+
+.logo-kana-small {
   width: 60%;
+  font-size: clamp(0.5rem, 2vw, 1rem);
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: rgb(238, 145, 7);
 }
 
 .logo-eng {
-  border: 1px solid blue;
+  width: 50%;
+  font-size: clamp(1rem, 5vw, 3.5rem);
+  font-family: 'Cursive_Font';
+  font-weight: 900;
   position: absolute;
-  right: 0;
-  width: 40%;
+  right: -0.25rem;
+  bottom: -2rem;
 }
 
 .contact-btn {

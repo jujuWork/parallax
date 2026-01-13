@@ -64,3 +64,10 @@ footer {
     url('/assets/font/Merriweather-Light.woff') format('woff');
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Cursive_Font';
+  src: url('/assets/font/Arizonia-Regular.woff2') format('woff2'),
+    url('/assets/font/Arizonia-Regular.woff') format('woff');
+  font-display: swap;
+}
