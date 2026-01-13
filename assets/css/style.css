@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Main_Font';
 }
 
 :root {
@@ -56,67 +57,10 @@ footer {
   grid-row-start: 5;
 }
 
-/* html {
-  height: 100vh;
-  overflow: hidden;
+/* Main TEXT FONT */
+@font-face {
+  font-family: 'Main_Font';
+  src: url('/assets/font/Merriweather-Light.woff2') format('woff2'),
+    url('/assets/font/Merriweather-Light.woff') format('woff');
+  font-display: swap;
 }
-
-body {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  background-color: #222;
-  perspective: 1px;
-  transform-style: preserve-3d;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.section1,
-.section2 {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  transform-style: preserve-3d;
-}
-
-.section1::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.2);
-  background-size: cover;
-  transform: translateZ(-1px) scale(2.2);
-  filter: blur(1px);
-}
-
-.section1::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: url("/assets/backgrounds/main/bg-btm.webp") center center;
-  background-size: cover;
-}
-
-.section2 {
-  background: rgba(68, 35, 19, 1);
-}
-
-.section1 > .text {
-  top: 4%;
-  transform: translateZ(-0.5px) scale(1.5, 1.6) translate(-33%, 10%);
-}
-
-.text {
-  top: 30%;
-  left: 70%;
-  position: absolute;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 15vw;
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2) 5px 5px 70px
-    rgba(255, 255, 255, 0.5);
-  transform: scale(1.1) translate(-50%, 10%);
-} */
