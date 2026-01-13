@@ -5,7 +5,9 @@
 }
 
 :root {
-  --main-text-color: #fafafa;
+  --main-text-color: #fafafa; /* rgb(250, 250, 250) */
+  --hover-text-color: #1d242b; /* rgb(29, 36, 43) */
+  --hover-bg-color: #f7fbfc; /* rgb(247, 251, 252) */
 }
 
 html {
