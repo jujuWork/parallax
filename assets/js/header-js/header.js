@@ -24,7 +24,7 @@ window.onclick = function (event) {
       }
     }
 
-    for (let i = 0; 0 < arrows.length; i++) {
+    for (let i = 0; i < arrows.length; i++) {
       arrows[i].classList.remove('active');
     }
   }

@@ -64,6 +64,7 @@ header {
   bottom: -2.5rem;
   left: 2rem;
   letter-spacing: 1rem;
+  /* background: rgb(12, 12, 12); */
 }
 
 .logo-kana-small {
@@ -72,7 +73,7 @@ header {
   position: absolute;
   bottom: 0;
   text-align: center;
-  color: rgb(238, 145, 7);
+  color: rgb(242, 97, 63);
 }
 
 .logo-eng {
