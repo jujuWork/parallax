@@ -15,12 +15,17 @@ html {
 body {
   background: url('/assets/backgrounds/main/main.webp') no-repeat center center /
     cover;
+  background-position: fixed;
   color: var(--main-text-color);
 }
 
 a {
   text-decoration: none;
   color: var(--main-text-color);
+}
+
+li {
+  list-style: none;
 }
 
 .parent {
