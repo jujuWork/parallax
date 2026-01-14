@@ -1,6 +1,7 @@
 header {
-  height: 1500px;
+  height: 100lvh;
   position: relative;
+  /* overflow-y: scroll; */
 }
 
 .nav-container {
@@ -9,6 +10,7 @@ header {
   width: 100%;
   padding: 0 2em;
   margin-top: 2em;
+  z-index: 100;
 }
 
 .nav-items {
@@ -33,6 +35,12 @@ header {
   justify-content: center;
   align-items: center;
   letter-spacing: 1.1px;
+}
+
+.nav-links:nth-child(2):focus,
+.dropdown:focus {
+  border-color: var(--hover-bg-color);
+  box-shadow: 0 1px 1px 1px;
 }
 
 .logo {
@@ -105,6 +113,23 @@ header {
   color: var(--main-text-color);
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  margin-left: -20px;
+}
+
+.dropbtn,
+.drop-arr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .drop-arr::before {
   content: '\21A7';
   position: absolute;
@@ -119,19 +144,6 @@ header {
 
 .drop-arr.inactive::before {
   transform: rotate(0deg);
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn,
-.drop-arr {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
 }
 
 .dropdown-content {
@@ -160,4 +172,18 @@ header {
 
 .show {
   display: block;
+}
+
+/* HEADER BG TOP */
+.bg-top {
+  border: 1px solid blue;
+  width: 100%;
+  height: 50lvh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: url('/assets/backgrounds/main/main.webp') no-repeat center center
+    fixed;
+  background-size: cover;
+  z-index: 2;
 }

@@ -11,15 +11,19 @@
   --hover-bg-color: #f7fbfc; /* rgb(247, 251, 252) */
 }
 
-html {
+html,
+body {
+  color: var(--main-text-color);
   height: 100%;
 }
 
 body {
-  background: url('/assets/backgrounds/main/main.webp') no-repeat center center /
-    cover;
-  background-position: fixed;
-  color: var(--main-text-color);
+  background: url('/assets/backgrounds/main/main.webp') no-repeat center center
+    fixed;
+  background-size: cover;
+  z-index: -100;
+  min-height: 100lvh;
+  /* overflow: hidden; */
 }
 
 a {
@@ -31,7 +35,7 @@ li {
   list-style: none;
 }
 
-.parent {
+.grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -39,10 +43,11 @@ li {
   position: relative;
 }
 
-/* .grid_item {
-} */
+.grid_item {
+  border: 1px solid orange;
+}
 
-header {
+.header {
   grid-column: span 5 / span 5;
 }
 
@@ -52,7 +57,7 @@ header {
   grid-row-start: 2;
 }
 
-footer {
+.footer {
   grid-column: span 5 / span 5;
   grid-row-start: 5;
 }
