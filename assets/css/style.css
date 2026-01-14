@@ -41,11 +41,12 @@ li {
   grid-template-rows: repeat(5, 1fr);
   gap: 8px;
   position: relative;
+  overflow: hidden;
 }
 
-.grid_item {
+/* .grid_item {
   border: 1px solid orange;
-}
+} */
 
 .header {
   grid-column: span 5 / span 5;
