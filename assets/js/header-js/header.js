@@ -29,3 +29,25 @@ window.onclick = function (event) {
     }
   }
 };
+
+// PARALLAX SCROLLING
+
+const header = document.querySelector('header');
+const one = document.getElementById('para-one');
+const two = document.getElementById('para-two');
+
+// Initialize two with starting position
+if (two) {
+  two.style.bottom = '-30em';
+}
+
+document.addEventListener('scroll', () => {
+  let value = window.scrollY;
+  // console.log(value);
+
+  if (two) {
+    // Start at -30em (in pixels: -480px assuming 1em = 16px) and move to 0
+    let bottomValue = -480 + value * 2;
+    two.style.bottom = bottomValue + 'px';
+  }
+});

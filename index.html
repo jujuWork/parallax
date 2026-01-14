@@ -20,7 +20,7 @@
     <script>
       // Loading Multiple Components
       function loadComponent(filePath, targetId) {
-        fetch(filePath)
+        return fetch(filePath)
           .then((response) => response.text())
           .then((htmlContent) => {
             document.getElementById(targetId).innerHTML = htmlContent;
@@ -30,13 +30,13 @@
           });
       }
 
-      // Execution
-      loadComponent('assets/pages/header.html', 'header-container');
-      // loadComponent('assets/pages/content.html', 'content-container');
-      // loadComponent('assets/pages/footer.html', 'footer-container');
+      // Execution - wait for header to load before loading the script
+      loadComponent('assets/pages/header.html', 'header-container').then(() => {
+        const script = document.createElement('script'); //asynchronous javascript
+        script.src = '/assets/js/header-js/header.js';
+        document.body.appendChild(script);
+      });
     </script>
-
-    <script src="/assets/js/header-js/header.js"></script>
-    <script src="/assets/js/header-js/parallax-scrolling.js"></script>
+    <!-- <script src="/assets/js/header-js/parallax-scrolling.js"></script> -->
   </body>
 </html>
