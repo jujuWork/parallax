@@ -180,32 +180,37 @@ header {
 
 /* HEADER SUB BG  */
 .sub-bg {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   width: 100%;
-  height: 50lvh;
+  height: 50%;
   position: absolute;
+  bottom: 3em;
   background: url('/assets/backgrounds/main/main.webp') no-repeat center center;
   background-size: cover;
   z-index: -2;
   will-change: transform;
   filter: blur(1px);
   transform: translateY(0);
+  margin-bottom: 0;
 }
 
 /* COMPANY  */
 .company-container {
-  position: relative;
-  height: 100%;
+  /* position: fixed; */
+  /* bottom: 30em; */
+  width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: -3;
+  will-change: transform;
+  transform: translateY(0);
 }
 
 .company-container p {
-  position: absolute;
-  bottom: 0em;
-  left: 0;
+  border: 1px solid red;
+  position: relative;
   width: 100%;
   font-size: clamp(2em, 5vw, 5em);
   letter-spacing: 1.1em;

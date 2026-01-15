@@ -30,12 +30,20 @@
           });
       }
 
-      // Execution - wait for header to load before loading the script
+      // Execution - wait for header.html to load before loading the script
       loadComponent('assets/pages/header.html', 'header-container').then(() => {
         const script = document.createElement('script'); //asynchronous javascript
         script.src = '/assets/js/header-js/header.js';
         document.body.appendChild(script);
       });
+      // Execution for content.html
+      loadComponent('assets/pages/content.html', 'content-container').then(
+        () => {
+          const script = document.createElement('script'); //asynchronous javascript
+          script.src = '/assets/js/content-js/content.js';
+          document.body.appendChild(script);
+        }
+      );
     </script>
     <!-- <script src="/assets/js/header-js/parallax-scrolling.js"></script> -->
   </body>

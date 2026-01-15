@@ -30,15 +30,22 @@ window.onclick = function (event) {
   }
 };
 
-// PARALLAX SCROLLING
+////////////////////// PARALLAX SCROLLING //////////////////////
 
 const header = document.querySelector('header');
 const one = document.getElementById('para-one');
 const two = document.getElementById('para-two');
+const three = document.getElementById('para-three');
 
 // Initialize two with starting position
 if (two) {
   two.style.bottom = '-30em';
+}
+
+// Initialize three with starting position
+if (three) {
+  three.style.bottom = '30em';
+  // three.style.position = 'fixed';
 }
 
 document.addEventListener('scroll', () => {
@@ -47,7 +54,19 @@ document.addEventListener('scroll', () => {
 
   if (two) {
     // Start at -30em (in pixels: -480px assuming 1em = 16px) and move to 0
-    let bottomValue = -480 + value * 2;
-    two.style.bottom = bottomValue + 'px';
+    let bottomValue = -480 + value * 1;
+    two.style.bottom = 1 * bottomValue + 'px';
+  }
+
+  if (three) {
+    // Start moving after para-two finishes (at 480px scroll)
+    let adjustedValue = value - 480;
+    if (adjustedValue > 0) {
+      let bottomValue = 80 - adjustedValue * 1;
+      three.style.bottom = bottomValue + 'px';
+    } else {
+      // three.style.position = 'absolute';
+      three.style.bottom = '5em';
+    }
   }
 });
