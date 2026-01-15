@@ -185,13 +185,11 @@ header {
   height: 50%;
   position: absolute;
   bottom: -20em;
-  background: url('/assets/backgrounds/main/main.webp') no-repeat center center;
+  background: url('/assets/backgrounds/main/main.webp') no-repeat top center;
   background-size: cover;
   z-index: -2;
   will-change: transform;
-  filter: blur(1px);
-  transform: translateY(0);
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
 }
 
 /* COMPANY  */
@@ -203,9 +201,20 @@ header {
   z-index: -3;
   will-change: transform;
   animation: fadeIn 1.5s ease-in-out forwards;
+  perspective: 1px;
+  transform-style: preserve-3d;
 }
 
-.company-container p {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.company-title {
   position: relative;
   width: 100%;
   font-size: clamp(2em, 5vw, 5em);
@@ -216,11 +225,13 @@ header {
   font-weight: 900;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.company-description {
+  position: fixed;
+  right: 20%;
+  top: 40%;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 1);
+  /* border-radius: 50%; */
+  transition: all 0.3s ease-in-out;
 }

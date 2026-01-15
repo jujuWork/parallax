@@ -36,14 +36,7 @@ const header = document.querySelector('header');
 const one = document.getElementById('para-one');
 const two = document.getElementById('para-two');
 const three = document.getElementById('para-three');
-
-// document.addEventListener('scroll', () => {
-//   let value = window.scrollY;
-//   console.log(value);
-
-//   header.style.overflow = 'hidden';
-//   two.style.bottom = -0.1 * value + 'px';
-// });
+const four = document.getElementById('para-four');
 
 // Initialize two with starting position
 if (header) {
@@ -55,9 +48,13 @@ if (two) {
   two.style.bottom = '-30em';
 }
 
+if (four) {
+  four.style.opacity = '0';
+}
+
 document.addEventListener('scroll', () => {
   const scrollPosition = window.scrollY;
-  // console.log(scrollPosition);
+  console.log(scrollPosition); // outputing values
 
   if (two) {
     const initialPosition = -480; // -30em in pixels
@@ -65,22 +62,40 @@ document.addEventListener('scroll', () => {
     two.style.bottom = '1 * `${newBottomPosition}px`';
   }
 
-  // if (three) {
-  //   three.style.bottom = -1 * scrollPosition + 'px';
-  //   three.style.position = 'fixed';
+  if (four) {
+    if (scrollPosition >= 70) {
+      four.style.opacity = '1';
+      four.style.transform = `rotate(0deg)`;
+    } else {
+      four.style.opacity = '0';
+    }
+
+    if (scrollPosition >= 500) {
+      // four.style.transform = `rotate(45deg)`;
+      // four.style.transform = `rotate3d(1, 1, 1, 360deg)`;
+      four.style.transform = `rotateY(180deg)`;
+      four.style.transition = '1s ease-in-out';
+    }
+
+    if (scrollPosition > 750) {
+      four.style.opacity = '0';
+    }
+  }
+
+  // if (scrollPosition >= 70) {
+  //   four.style.opacity = '1';
+  //   four.style.zIndex = '100';
+  // } else {
+  //   four.style.opacity = '0';
+  // }
+  // if (scrollTop <= 480) {
+  //   const companyDescription = document.getElementsByClassName(
+  //     'company-description'
+  //   );
+
+  //   for (let i = 0; i < companyDescription.length; i++) {
+  //     companyDescription[i].style.opacity = '1';
+  //     companyDescription[i].style.zIndex = '100';
+  //   }
   // }
 });
-// Uncomment below when ready to animate para-three
-// if (three) {
-//   const triggerPoint = 480; // Start after para-two finishes
-//   const adjustedScroll = scrollPosition - triggerPoint;
-//
-//   if (adjustedScroll > 0) {
-//     const newBottomPosition = triggerPoint - adjustedScroll;
-//     three.style.bottom = `${newBottomPosition}px`;
-//   } else {
-//     three.style.position = 'absolute';
-//     three.style.bottom = '10em';
-//   }
-// }
-// });
