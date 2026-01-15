@@ -42,31 +42,26 @@ if (two) {
   two.style.bottom = '-30em';
 }
 
-// Initialize three with starting position
-if (three) {
-  three.style.bottom = '30em';
-  // three.style.position = 'fixed';
-}
-
 document.addEventListener('scroll', () => {
-  let value = window.scrollY;
-  // console.log(value);
+  const scrollPosition = window.scrollY;
 
   if (two) {
-    // Start at -30em (in pixels: -480px assuming 1em = 16px) and move to 0
-    let bottomValue = -480 + value * 1;
-    two.style.bottom = 1 * bottomValue + 'px';
+    const initialPosition = -480; // -30em in pixels
+    const newBottomPosition = initialPosition + scrollPosition;
+    two.style.bottom = '1 * `${newBottomPosition}px`';
   }
 
-  if (three) {
-    // Start moving after para-two finishes (at 480px scroll)
-    let adjustedValue = value - 480;
-    if (adjustedValue > 0) {
-      let bottomValue = 80 - adjustedValue * 1;
-      three.style.bottom = bottomValue + 'px';
-    } else {
-      // three.style.position = 'absolute';
-      three.style.bottom = '5em';
-    }
-  }
+  // Uncomment below when ready to animate para-three
+  // if (three) {
+  //   const triggerPoint = 480; // Start after para-two finishes
+  //   const adjustedScroll = scrollPosition - triggerPoint;
+  //
+  //   if (adjustedScroll > 0) {
+  //     const newBottomPosition = triggerPoint - adjustedScroll;
+  //     three.style.bottom = `${newBottomPosition}px`;
+  //   } else {
+  //     three.style.position = 'absolute';
+  //     three.style.bottom = '10em';
+  //   }
+  // }
 });

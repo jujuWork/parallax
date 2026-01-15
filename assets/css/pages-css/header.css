@@ -1,9 +1,11 @@
 header {
-  height: 100lvh;
+  height: 100vh;
   position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
   scrollbar-width: none;
+  perspective: 1px;
+  transform-style: preserve-3d;
 }
 
 .nav-container {
@@ -196,16 +198,12 @@ header {
 
 /* COMPANY  */
 .company-container {
-  /* position: fixed; */
-  /* bottom: 30em; */
+  position: fixed;
+  top: 30%;
   width: 100%;
   height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: -3;
   will-change: transform;
-  transform: translateY(0);
 }
 
 .company-container p {
