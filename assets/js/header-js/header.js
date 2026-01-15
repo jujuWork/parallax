@@ -37,13 +37,27 @@ const one = document.getElementById('para-one');
 const two = document.getElementById('para-two');
 const three = document.getElementById('para-three');
 
+// document.addEventListener('scroll', () => {
+//   let value = window.scrollY;
+//   console.log(value);
+
+//   header.style.overflow = 'hidden';
+//   two.style.bottom = -0.1 * value + 'px';
+// });
+
 // Initialize two with starting position
+if (header) {
+  header.style.overflow = 'hidden';
+  header.style.overflowY = 'scroll';
+}
+
 if (two) {
   two.style.bottom = '-30em';
 }
 
 document.addEventListener('scroll', () => {
   const scrollPosition = window.scrollY;
+  // console.log(scrollPosition);
 
   if (two) {
     const initialPosition = -480; // -30em in pixels
@@ -51,17 +65,22 @@ document.addEventListener('scroll', () => {
     two.style.bottom = '1 * `${newBottomPosition}px`';
   }
 
-  // Uncomment below when ready to animate para-three
   // if (three) {
-  //   const triggerPoint = 480; // Start after para-two finishes
-  //   const adjustedScroll = scrollPosition - triggerPoint;
-  //
-  //   if (adjustedScroll > 0) {
-  //     const newBottomPosition = triggerPoint - adjustedScroll;
-  //     three.style.bottom = `${newBottomPosition}px`;
-  //   } else {
-  //     three.style.position = 'absolute';
-  //     three.style.bottom = '10em';
-  //   }
+  //   three.style.bottom = -1 * scrollPosition + 'px';
+  //   three.style.position = 'fixed';
   // }
 });
+// Uncomment below when ready to animate para-three
+// if (three) {
+//   const triggerPoint = 480; // Start after para-two finishes
+//   const adjustedScroll = scrollPosition - triggerPoint;
+//
+//   if (adjustedScroll > 0) {
+//     const newBottomPosition = triggerPoint - adjustedScroll;
+//     three.style.bottom = `${newBottomPosition}px`;
+//   } else {
+//     three.style.position = 'absolute';
+//     three.style.bottom = '10em';
+//   }
+// }
+// });
