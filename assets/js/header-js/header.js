@@ -71,9 +71,9 @@ document.addEventListener('scroll', () => {
     } else if (scroll >= 70 && scroll <= 800) {
       four.style.opacity = '1';
       const rotation = (scroll - 70) * (360 / 800); // 360deg across 800px (100-900)
-      four.style.transform = `rotateX(${rotation}deg)`;
+      four.style.transform = `rotateX(${rotation}deg) translateZ(${rotation}2px)`;
     } else if (scroll > 500 && scroll < 1000) {
-      four.style.transform = `rotateX(360deg) translateZ(${rotation}2px)`; // Stop at 360 degrees
+      four.style.transform = `rotateX(360deg)`; // Stop at 360 degrees
       four.style.position = 'fixed';
     } else if (scroll >= 1300) {
       four.style.display = 'none';
