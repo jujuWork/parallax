@@ -63,9 +63,7 @@ document.addEventListener('scroll', () => {
       four.style.transform = `rotate(${rotation}deg)`;
     } else if (scroll >= 800) {
       four.style.transform = `rotateY(360deg)`; // Stop at 360 degrees
-      four.style.position = 'fixed';
-    } else {
-      four.style.opacity = '0';
+      four.style.opacity = '0'; // if it reaches 800
     }
   }
 });
