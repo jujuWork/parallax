@@ -53,50 +53,56 @@ if (four) {
 }
 
 document.addEventListener('scroll', () => {
-  const scrollPosition = window.scrollY;
-  console.log(scrollPosition); // outputing values
+  const scroll = window.scrollY;
 
-  if (two) {
-    const initialPosition = -480; // -30em in pixels
-    const newBottomPosition = initialPosition + scrollPosition;
-    two.style.bottom = '1 * `${newBottomPosition}px`';
+  // Spin element four when scroll is past 500px
+  if (four) {
+    if (scroll >= 100 && scroll < 800) {
+      four.style.opacity = '1';
+      const rotation = (scroll - 100) * (360 / 700); // 360deg across 700px (100-800)
+      four.style.transform = `rotate(${rotation}deg)`;
+    } else if (scroll >= 800) {
+      four.style.transform = `rotateY(360deg)`; // Stop at 360 degrees
+      four.style.position = 'fixed';
+    } else {
+      four.style.opacity = '0';
+    }
   }
-
-  // if (four) {
-  //   if (scrollPosition >= 70) {
-  //     four.style.opacity = '1';
-  //     four.style.transform = `rotate(0deg)`;
-  //   } else {
-  //     four.style.opacity = '0';
-  //   }
-
-  //   if (scrollPosition >= 500) {
-  //     // four.style.transform = `rotate(45deg)`;
-  //     // four.style.transform = `rotate3d(1, 1, 1, 360deg)`;
-  //     four.style.transform = `rotateY(180deg)`;
-  //     four.style.transition = '1s ease-in-out';
-  //   }
-
-  //   if (scrollPosition > 750) {
-  //     four.style.opacity = '0';
-  //   }
-  // }
-
-  ////////////////////// PARALLAX SCROLLING WITH TIMING ANG DURATION //////////////////////
-
-  const containerSpin = [
-    { transform: 'rotate(0) scale(1)' },
-    { transform: 'rotate(180deg) scale(1.1)' },
-  ];
-
-  const containerTiming = {
-    duration: 2000, // 2s
-    iteration: 1,
-  };
-
-  const companyDescription = document.querySelector('.company-description');
-
-  companyDescription.addEventListener('scroll', () => {
-    companyDescription.animate(containerSpin, containerTiming);
-  });
 });
+// if (four) {
+//   if (scrollPosition >= 70) {
+//     four.style.opacity = '1';
+//     four.style.transform = `rotate(0deg)`;
+//   } else {
+//     four.style.opacity = '0';
+//   }
+
+//   if (scrollPosition >= 500) {
+//     // four.style.transform = `rotate(45deg)`;
+//     // four.style.transform = `rotate3d(1, 1, 1, 360deg)`;
+//     four.style.transform = `rotateY(180deg)`;
+//     four.style.transition = '1s ease-in-out';
+//   }
+
+//   if (scrollPosition > 750) {
+//     four.style.opacity = '0';
+//   }
+// }
+
+////////////////////// PARALLAX SCROLLING WITH TIMING ANG DURATION //////////////////////
+
+// const containerSpin = [
+//   { transform: 'rotate(0) scale(1)' },
+//   { transform: 'rotate(180deg) scale(1.1)' },
+// ];
+
+// const containerTiming = {
+//   duration: 2000, // 2s
+//   iteration: 1,
+// };
+
+// const companyDescription = document.querySelector('.company-description');
+
+// companyDescription.addEventListener('scroll', () => {
+//   companyDescription.animate(containerSpin, containerTiming);
+// });
