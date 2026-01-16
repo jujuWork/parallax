@@ -223,6 +223,7 @@ header {
   font-family: 'Cursive_Font';
   text-transform: uppercase;
   font-weight: 900;
+  display: block;
 }
 
 .company-about {
@@ -235,6 +236,7 @@ header {
   color: black;
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
+  display: block;
 }
 
 .company-about p {
