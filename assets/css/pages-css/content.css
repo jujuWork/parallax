@@ -1,0 +1,19 @@
+main {
+  height: 100vh;
+  position: relative;
+  border: 1px solid red;
+  overflow-y: scroll;
+}
+
+.about {
+  border: 1px solid blue;
+  position: absolute;
+  top: 40%;
+  left: 13%;
+  height: auto;
+  width: 50%;
+}
+
+/* .about-text {
+  font-size: clamp(3rem, 6vw, 6rem);
+} */
