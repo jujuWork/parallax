@@ -184,12 +184,16 @@ header {
   width: 100%;
   height: 50%;
   position: absolute;
-  bottom: -20em;
+  /* bottom: -20em; */
   background: url('/assets/backgrounds/main/main.webp') no-repeat top center;
   background-size: cover;
   z-index: -2;
   will-change: transform;
   /* margin-bottom: 0; */
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  scrollbar-width: 100px;
 }
 
 /* COMPANY  */

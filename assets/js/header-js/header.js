@@ -57,6 +57,15 @@ document.addEventListener('scroll', () => {
   // console.log(scroll);
   console.log(scroll);
 
+  // if (two) {
+  //   if (scroll > 70) {
+  //     const blurAmount = Math.min(((scroll - 70) / 50) * 5, 5);
+  //     two.style.filter = `blur(${blurAmount}px)`;
+  //   } else {
+  //     two.style.filter = 'blur(0px)';
+  //   }
+  // }
+
   if (three) {
     if (scroll > 120) {
       three.style.display = 'none';
@@ -70,7 +79,7 @@ document.addEventListener('scroll', () => {
     if (scroll < 70) {
       four.style.opacity = '0';
       four.style.transform = `rotateX(0deg)`; // Reset rotation when scrolling up past 100px
-    } else if (scroll >= 70 && scroll <= 800) {
+    } else if (scroll >= 120 && scroll <= 800) {
       four.style.opacity = '1';
       const rotation = (scroll - 70) * (360 / 800); // 360deg across 800px (100-900)
       four.style.transform = `rotateX(${rotation}deg) translateZ(${rotation}2px)`;
