@@ -60,6 +60,8 @@ document.addEventListener('scroll', () => {
   if (three) {
     if (scroll > 120) {
       three.style.display = 'none';
+    } else if (scroll < 120) {
+      three.style.display = 'block';
     }
   }
 

@@ -44,6 +44,7 @@ li {
   overflow: hidden;
   border: 1px solid red;
   max-width: 1440px;
+  padding: 50px;
 }
 
 /* .grid_item {
