@@ -55,7 +55,7 @@ if (four) {
 document.addEventListener('scroll', () => {
   const scroll = window.scrollY;
   // console.log(scroll);
-  console.log(scrollX);
+  console.log(scroll);
 
   if (three) {
     if (scroll > 120) {
@@ -72,10 +72,10 @@ document.addEventListener('scroll', () => {
       four.style.opacity = '1';
       const rotation = (scroll - 70) * (360 / 800); // 360deg across 800px (100-900)
       four.style.transform = `rotateX(${rotation}deg)`;
-    } else if (scroll > 800 && scroll < 1000) {
-      four.style.transform = `rotateX(360deg)`; // Stop at 360 degrees
+    } else if (scroll > 500 && scroll < 1000) {
+      four.style.transform = `rotateX(360deg) translateZ(${rotation}2px)`; // Stop at 360 degrees
       four.style.position = 'fixed';
-    } else if (scroll >= 1000) {
+    } else if (scroll >= 1300) {
       four.style.display = 'none';
     }
   }

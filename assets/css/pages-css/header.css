@@ -237,6 +237,8 @@ header {
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
   display: block;
+  perspective: 800px;
+  transform-style: preserve-3d;
 }
 
 .company-about p {
