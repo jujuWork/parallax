@@ -59,13 +59,13 @@ document.addEventListener('scroll', () => {
   if (four) {
     if (scroll < 70) {
       four.style.opacity = '0';
-      four.style.transform = `rotate(0deg)`; // Reset rotation when scrolling up past 100px
+      four.style.transform = `rotateX(0deg)`; // Reset rotation when scrolling up past 100px
     } else if (scroll >= 100 && scroll <= 800) {
       four.style.opacity = '1';
       const rotation = (scroll - 100) * (360 / 800); // 360deg across 800px (100-900)
-      four.style.transform = `rotate(${rotation}deg)`;
+      four.style.transform = `rotateX(${rotation}deg)`;
     } else if (scroll > 800) {
-      four.style.transform = `rotate(360deg)`; // Stop at 360 degrees
+      four.style.transform = `rotateX(360deg)`; // Stop at 360 degrees
     }
   }
 });
